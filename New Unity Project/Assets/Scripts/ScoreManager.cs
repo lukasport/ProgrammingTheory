@@ -6,14 +6,14 @@ using TMPro;
 public class ScoreManager : MonoBehaviour
 {
     // Start is called before the first frame update
-    public int score { get; set; }
+    public int score { get; set; } // ENCAPSULATION
     public TextMeshProUGUI scoretext;
     public  void AddScore(int amount)
     {
         score += amount;
         UpdateScore();
     }
-    void UpdateScore()
+    void UpdateScore() // ABSTRACTION
     {
         scoretext.text = "Score: " + score;
     }

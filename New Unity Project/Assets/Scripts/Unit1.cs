@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 public class Unit1 : Unit
 {
     // Start is called before the first frame update
-    
-    protected override void PlayerCollision()
+    // INHERITANCE
+    protected override void PlayerCollision()// POLYMORPHISM
     {
         if (scoreManager.score > PlayerPrefs.GetInt("HighScore"))
         {

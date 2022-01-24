@@ -6,7 +6,8 @@ public class Unit2 : Unit
 {
     [SerializeField]
     private GameObject standardUnit;
-    protected override void PlayerCollision()
+    // INHERITANCE
+    protected override void PlayerCollision()// POLYMORPHISM
     {
         GameObject unit = Instantiate(standardUnit, transform.position + Vector3.up * 2, Quaternion.Euler(0, 0, Random.Range(-45f, 45f)));
         unit.GetComponent<Rigidbody>().AddForce(unit.transform.up* 10, ForceMode.Impulse);
