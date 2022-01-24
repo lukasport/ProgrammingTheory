@@ -26,4 +26,5 @@ public class Manager : MonoBehaviour
     {
         highscore.text = "Highscore: " + PlayerPrefs.GetInt("HighScore", 0);
     }
+    
 }
