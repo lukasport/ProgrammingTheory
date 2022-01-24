@@ -12,6 +12,12 @@ public class SpawnManager : MonoBehaviour
     void Start()
     {
         Invoke("Spawn", timestarted);
+        
+    }
+    private void Awake()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     // Update is called once per frame
@@ -21,8 +27,9 @@ public class SpawnManager : MonoBehaviour
     }
     void Spawn()
     {
-        Instantiate(prefabs[0], transform.position + new Vector3(Random.Range(-11f, 11f), 0, 0), transform.rotation);
-        //timestarted *= 0.95f;
+        Instantiate(prefabs[Random.Range(0,prefabs.Count)], transform.position + new Vector3(Random.Range(-10f, 10f), 0, 0), transform.rotation);
+        if(timestarted > .2f) timestarted *= 0.95f;
+
         Invoke("Spawn", timestarted);
     }
     
